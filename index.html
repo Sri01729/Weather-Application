@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    form label,
+    form input,
+    form button {
+      flex: 1 1 100%;
+      margin: 5px 0;
+    }
+
+    form input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    #map {
+      height: 400px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+
+      form label,
+      form input,
+      form button {
+        flex: 1 1 48%;
+      }
+    }
+  </style>
+
+  <title>Weather Application</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Weather Data</h1>
+    <div id="temp"></div>
+    <div id="forecast"></div>
+    <div id="elevation"></div>
+
+    <form id="weatherForm">
+      <label for="location">Enter Location:</label>
+      <input type="text" name="longitude" id="location">
+      <button type="submit">Get Weather Data</button>
+    </form>
+
+    <div id="weatherInfo"></div>
+    <div id="map"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
